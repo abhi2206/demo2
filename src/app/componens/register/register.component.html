@@ -1,0 +1,51 @@
+<div class="register">
+	<h2>medline.com</h2>
+	<h1>Account Registration</h1>
+	<h2>User Information</h2>
+	<form action="register" [formGroup]="registerForm" (submit)="submitForm($event)">
+		<div class="page-error" *ngIf="registerForm.invalid && registerForm.touched">Please review below errors</div>
+		<h2>User information</h2>
+		<div class="row">
+			<div class="col">
+				<div class="label">First Name</div>
+				<div class="input">
+					<input type="text" formControlName="fname">
+				</div>
+				<div class="error" *ngIf="fname.touched && fname.invalid">First Name is required field</div>
+			</div>
+			<div class="col">
+				<div class="label">Last Name</div>
+				<div class="input">
+					<input type="text" formControlName="lname">
+				</div>
+				<div class="error"*ngIf="lname.touched && lname.invalid">Last Name is required field</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="label">Phone</div>
+				<div class="input">
+					<input type="number" formControlName="phone">
+				</div>
+				<div class="error" *ngIf="phone.touched && phone.invalid">Phone is required field</div>
+			</div>
+			<div class="col">
+				<div class="label">Ext</div>
+				<div class="input">
+					<input type="number" formControlName="ext">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="label">Email</div>
+				<div class="input">
+					<input type="text" formControlName="email">
+				</div>
+				<div class="error" *ngIf="email.touched && email.invalid">Email is required field</div>
+			</div>
+			
+		</div>
+		<div class="btn-wrapper"><button class="btn">Next</button></div>
+	</form>
+</div>
